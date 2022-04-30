@@ -1,0 +1,19 @@
+.header{
+   font-size: 20px;
+   transition: color ease-in-out 300ms;
+   text-decoration: none;
+   margin-left: 20px;
+   color: wheat;
+
+}
+.active-link {
+    background-color: rgb(23, 185, 244);
+    padding: 2px 15px;
+    border-radius: 10px 0;
+    margin-left: 25px;
+    text-decoration: none;
+    color: wheat;
+}
+.navbar {
+    background-color: rgb(88, 88, 88);
+}
