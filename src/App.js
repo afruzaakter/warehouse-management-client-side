@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home/Home';
 import Login from './Components/Auth/Login/Login';
+import SignUp from './Components/Auth/SignUp/SignUp';
 function App() {
   return (
     <div>
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home></Home>} ></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
 
     </div>

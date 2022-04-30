@@ -2,3 +2,30 @@
     border-radius: 8px;
     background-color: rgb(241, 202, 232);
 }
+.account-style{
+    text-decoration: none;
+    margin-left: 5px;
+    
+}
+
+/* -------------social part -------------- */
+.line-container{
+    display: flex;
+    align-items: center;
+}
+
+.line-left, .line-right{
+    height: 1px;
+    width: 145px;
+    background-color: #1e90c2;
+}
+.line-container p{
+    color: #1e90c2;
+    margin: 0 10px 2px 10px;
+}
+.social-style{
+    background-color: rgb(247, 85, 199);
+    border: none;
+    border-radius: 25px;
+    
+}
