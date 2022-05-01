@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialIcon from '../SocialIcon/SocialIcon';
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -29,9 +30,14 @@ const SignUp = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
-        hookerror,
+        
+        hookError,
       ] = useCreateUserWithEmailAndPassword(auth);
+      //navigate part
+      const navigate = useNavigate()
+      if(user){
+          navigate('/home');
+      }
 //handle email validation
 const handleEmailChange = (e) =>{
     // console.log({...userInfo, email: e.target.value});
@@ -81,6 +87,24 @@ const handleSignUp = (e) =>{
     e.preventDefault();
     createUserWithEmailAndPassword(userInfo.email, userInfo.password);
 }
+//firebase error handle
+useEffect(()=>{
+const error = hookError;
+if(error){
+    switch(error?.code){
+        case "auth/invalid-email":
+        toast("Invalid email provided,Please provide a valid email")
+        break;
+
+        case"auth/invalid-password":
+        toast("Wrong password,Please provide a valid password")
+        break;
+        default:
+            toast('Something went wrong, Please try again')
+    }
+}
+},[hookError])
+
     return (
         <div className='container m-5 p-5'>
             <div className='m-5 p-5'>
@@ -116,6 +140,8 @@ const handleSignUp = (e) =>{
                                 <p>New to Brazzer?{" "}</p>
                                 <Link to="/login" className='account-style' >Login</Link>
                             </div>
+
+                            <ToastContainer/>
                             
                         </Form>
                         <SocialIcon></SocialIcon>

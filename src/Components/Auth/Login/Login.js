@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './Login.css';
 import{Link, useNavigate} from 'react-router-dom'
 import SocialIcon from '../SocialIcon/SocialIcon';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast, ToastContainer } from 'react-toastify';
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
         email: "",
@@ -20,9 +21,8 @@ const Login = () => {
     //firebase hook
     const [
         signInWithEmailAndPassword,
-        user,
-        loading,
-        hookerror,
+        user, 
+        hookError,
       ] = useSignInWithEmailAndPassword(auth);
 
       //Navigate part
@@ -68,7 +68,23 @@ const Login = () => {
 
     }
     
-
+//firebase error handle
+useEffect(()=>{
+    const error = hookError;
+    if(error){
+        switch(error?.code){
+            case "auth/invalid-email":
+            toast("Invalid email provided,Please provide a valid email")
+            break;
+    
+            case"auth/invalid-password":
+            toast("Wrong password,Please provide a valid password")
+            break;
+            default:
+                toast('Something went wrong, Please try again')
+        }
+    }
+    },[hookError])
     return (
         <div className='container m-5 p-5'>
             <div className='m-5 p-5'>
@@ -79,12 +95,12 @@ const Login = () => {
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Control onChange={handleEmailChange} type="email" placeholder="Your Email" />
                             </Form.Group>
-                            {/* {error?.email && <p className='text-danger'>{error.email}</p>} */}
+                            {error?.email && <p className='text-danger'>{error.email}</p>}
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">                                
                                 <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" />
                             </Form.Group>
-                            {/* {error?.password && <p className='text-danger'>{error.password}</p>} */}
+                            {error?.password && <p className='text-danger'>{error.password}</p>}
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Check me out" />
                             </Form.Group>
@@ -99,6 +115,7 @@ const Login = () => {
                                 <p>Forget Password?{" "}</p>
                                 <Link to="/signup" className='account-style' >Resert Password</Link>
                             </div>
+                            <ToastContainer/>
                         </Form>
                         <SocialIcon></SocialIcon>
                     </div>
