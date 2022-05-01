@@ -1,23 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './Login.css';
-import{Link} from 'react-router-dom'
+import{Link, useNavigate} from 'react-router-dom'
 import SocialIcon from '../SocialIcon/SocialIcon';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 const Login = () => {
+    const [userInfo, setUserInfo] = useState({
+        email: "",
+        password: "",
+    });
+    // error handle
+    const [error, setError] = useState({
+        email: "",
+        password: "",
+        general: "",
+    })
+
+    //firebase hook
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        hookerror,
+      ] = useSignInWithEmailAndPassword(auth);
+
+      //Navigate part
+      const navigate = useNavigate();
+
+      if(user){
+          navigate('/home');
+      }
+     //Email handle Part
+    const handleEmailChange = (e) => {
+       
+        const emailRegex = /\S+@\S+\.\S+/;
+        const validEmail = emailRegex.test(e.target.value);
+        // console.log(validEmail);
+        if (validEmail) {
+            setUserInfo({ ...userInfo, email: e.target.value });
+            setError({ ...error, email: " " });
+        }
+        else {
+            setError({ ...error, email: "❌ Wrong Email" });
+            setUserInfo({ ...userInfo, email: " " });
+        }
+    }
+
+    //Password handle Part
+
+    const handlePasswordChange = (e) => {
+        const passwordRegex = /.{6,}/;
+        const validPassword = passwordRegex.test(e.target.value);
+
+        if (validPassword) {
+            setUserInfo({ ...userInfo, password: e.target.value });
+            setError({ ...error, password: "" });
+        } else {
+            setError({ ...error, password: "❌ Minimum 6 characters!" });
+            setUserInfo({ ...userInfo, password: "" });
+        }
+    }
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+       signInWithEmailAndPassword(userInfo.email, userInfo.password);
+
+    }
+    
+
     return (
         <div className='container m-5 p-5'>
             <div className='m-5 p-5'>
                 <div className='p-3  w-50 mx-auto login-form'>
                     <div>
                         <h3 className='text-center'>LOGIN</h3>
-                        <Form>
+                        <Form onSubmit={handleLogin}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="email" placeholder="Your Email" />
+                                <Form.Control onChange={handleEmailChange} type="email" placeholder="Your Email" />
                             </Form.Group>
+                            {/* {error?.email && <p className='text-danger'>{error.email}</p>} */}
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">                                
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" />
                             </Form.Group>
+                            {/* {error?.password && <p className='text-danger'>{error.password}</p>} */}
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Check me out" />
                             </Form.Group>
