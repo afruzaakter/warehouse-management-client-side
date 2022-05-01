@@ -1,0 +1,22 @@
+
+.navbar-style{
+    background-color: aquamarine;
+}
+.home-banner{ 
+    background-color: #7300e6;
+    width: 600px;
+    height: 300px;
+    border-radius: 300px  400px 100px ;
+    
+}
+.home-banner img{
+    position: relative;
+    margin-left: 143px;
+    width: 300px;
+
+}
+
+.text-style{
+    color: #7300e6;
+    
+}

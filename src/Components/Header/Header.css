@@ -3,17 +3,30 @@
    transition: color ease-in-out 300ms;
    text-decoration: none;
    margin-left: 20px;
-   color: wheat;
-
+   color: #7300e6;
+   font-weight: 600; 
+   
 }
+
 .active-link {
-    background-color: rgb(246, 66, 192);
+    background-color: #7300e6;
     padding: 2px 15px;
     border-radius: 10px 0;
     margin-left: 25px;
     text-decoration: none;
     color: wheat;
 }
+.active-link:hover{
+    color: wheat;
+}
 .navbar {
     background-color: rgb(88, 88, 88);
+}
+.signoutStyle{
+    background-color: rgb(246, 66, 192);
+    color: wheat;
+    border-radius: 10px 0;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
 }

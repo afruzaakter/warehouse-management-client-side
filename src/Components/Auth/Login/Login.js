@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './Login.css';
-import{Link, useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SocialIcon from '../SocialIcon/SocialIcon';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -21,19 +21,19 @@ const Login = () => {
     //firebase hook
     const [
         signInWithEmailAndPassword,
-        user, 
+        user,
         hookError,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
-      //Navigate part
-      const navigate = useNavigate();
+    //Navigate part
+    const navigate = useNavigate();
 
-      if(user){
-          navigate('/home');
-      }
-     //Email handle Part
+    if (user) {
+        navigate('/home');
+    }
+    //Email handle Part
     const handleEmailChange = (e) => {
-       
+
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value);
         // console.log(validEmail);
@@ -64,41 +64,41 @@ const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-       signInWithEmailAndPassword(userInfo.email, userInfo.password);
+        signInWithEmailAndPassword(userInfo.email, userInfo.password);
 
     }
-    
-//firebase error handle
-useEffect(()=>{
-    const error = hookError;
-    if(error){
-        switch(error?.code){
-            case "auth/invalid-email":
-            toast("Invalid email provided,Please provide a valid email")
-            break;
-    
-            case"auth/invalid-password":
-            toast("Wrong password,Please provide a valid password")
-            break;
-            default:
-                toast('Something went wrong, Please try again')
+
+    //firebase error handle
+    useEffect(() => {
+        const error = hookError;
+        if (error) {
+            switch (error?.code) {
+                case "auth/invalid-email":
+                    toast("Invalid email provided,Please provide a valid email")
+                    break;
+
+                case "auth/invalid-password":
+                    toast("Wrong password,Please provide a valid password")
+                    break;
+                default:
+                    toast('Something went wrong, Please try again')
+            }
         }
-    }
-    },[hookError])
+    }, [hookError])
     return (
         <div className='container m-5 p-5'>
             <div className='m-5 p-5'>
                 <div className='p-3  w-50 mx-auto login-form'>
                     <div>
-                        <h3 className='text-center'>LOGIN</h3>
+                        <h3 className='text-center textColor'>LOGIN</h3>
                         <Form onSubmit={handleLogin}>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control onChange={handleEmailChange} type="email" placeholder="Your Email" />
+                            <Form.Group className="mb-3 " controlId="formBasicEmail">
+                                <Form.Control className='inputField' onChange={handleEmailChange} type="email" placeholder="Your Email" />
                             </Form.Group>
                             {error?.email && <p className='text-danger'>{error.email}</p>}
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">                                
-                                <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" />
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Control className='inputField' onChange={handlePasswordChange} type="password" placeholder="Password" />
                             </Form.Group>
                             {error?.password && <p className='text-danger'>{error.password}</p>}
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -115,7 +115,7 @@ useEffect(()=>{
                                 <p>Forget Password?{" "}</p>
                                 <Link to="/signup" className='account-style' >Resert Password</Link>
                             </div>
-                            <ToastContainer/>
+                            <ToastContainer />
                         </Form>
                         <SocialIcon></SocialIcon>
                     </div>

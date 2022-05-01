@@ -32,7 +32,7 @@ const SignUp = () => {
         user,
         
         hookError,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
       //navigate part
       const navigate = useNavigate()
       if(user){
@@ -113,18 +113,18 @@ if(error){
                         <h3 className='text-center'>SIGN UP</h3>
                         <Form onSubmit={handleSignUp}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control onChange={handleEmailChange} type="email" placeholder="Your Email" />
+                                <Form.Control className='inputField' onChange={handleEmailChange} type="email" placeholder="Your Email" />
                             </Form.Group>
                         {error?.email && <p className='text-danger'>{error.email}</p>}
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">                                
-                                <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" />
+                                <Form.Control className='inputField' onChange={handlePasswordChange} type="password" placeholder="Password" />
                             </Form.Group>
 
                             {error?.password && <p className='text-danger'>{error.password}</p>}
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">                                
-                                <Form.Control onChange={handleConfirmPassword} type="password" placeholder="Confirm Password" />
+                                <Form.Control className='inputField' onChange={handleConfirmPassword} type="password" placeholder="Confirm Password" />
                             </Form.Group>
 
                           
