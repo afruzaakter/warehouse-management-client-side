@@ -3,7 +3,6 @@ import Product from '../Product/Product';
 import './Products.css';
 const Products = () => {
     const [products, setProducts] = useState([]);
-    console.log(products);
     useEffect(()=>{
         fetch('data.json')
         .then(res => res.json())
@@ -11,9 +10,27 @@ const Products = () => {
     },[])
 
     return (
-        <div className='container m-5 p-5'>
-            <div className=''>
-                <h1 className='text-center mt-5 mb-5'>Our <span className='text-style'>Products</span> </h1> 
+        // <div className='container m-5 p-5'>
+        //     <div className=''>
+        //         <h1 className='text-center mt-5 mb-5'>Our All <span className='text-style'>Products</span> </h1> 
+        //         <div className='productContainer container'>
+        //             {
+        //               products.map(product =><Product key = {product.id} product = {product}>
+
+        //               </Product>)
+        //             }
+        //         </div>
+
+        //     </div>
+            
+        // </div>
+
+        <div className='product-container'>
+            <div className='bg-primary p-5 w-50 mt-5'>
+                <h4 className='mt-4 '>All Product</h4>
+            </div>
+            <div className='mt-5'>
+            <h1 className='text-center mt-5 mb-5 p-3'>Our All <span className='text-style'>Products</span> </h1> 
                 <div className='productContainer container'>
                     {
                       products.map(product =><Product key = {product.id} product = {product}>
