@@ -2,6 +2,11 @@
 .navbar-style{
     background-color: aquamarine;
 }
+.banner-container{
+    background-image: url(../../images/slider/banner-image.jpg);
+    height: 500px;
+    width: 100%;
+}
 
 .text-style{
     color: #7300e6;

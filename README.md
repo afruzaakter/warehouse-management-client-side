@@ -4,11 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project Description:
 
-.At first select project name and create client side and server side folder./
-.Client side: firebase install , component create, login and signup page  design./
-.Firebase hook install, email , password and Google authentication setup./
-.Home page Design , others component create, bootstrap install, fontawasome install etc./
-.Server side: Server side folder create and install mongodb, express, cors and dotenv file./
+.At first select project name and create client side and server side folder.\
+.Client side: firebase install , component create, login and signup page  design.\
+.Firebase hook install, email , password and Google authentication setup.\
+.Home page Design , others component create, bootstrap install, fontawasome install etc.\
+.Server side: Server side folder create and install mongodb, express, cors and dotenv file.\
 
 ### `npm start`
 

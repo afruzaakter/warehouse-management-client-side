@@ -10,6 +10,15 @@
   },
   {
     "id": "02",
+    "name": "Sports Coat",
+    "price": 59,
+    "quantity": 50,
+    "supplierName": "Milton",
+    "img": "https://i.ibb.co/1GFmKmC/61-Yt-CBTqm-HL-AC-UL320.jpg",
+    "description": " MOGU Men's Casual Suit Blazer Jackets Slim Fit Plaid Sports Coat"
+  },
+  {
+    "id": "03",
     "name": "Motion Blazer",
     "price": 89,
     "quantity": 100,
