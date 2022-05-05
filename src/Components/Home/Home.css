@@ -2,21 +2,20 @@
 .navbar-style{
     background-color: aquamarine;
 }
-.home-banner{ 
-    background-color: #7300e6;
-    width: 600px;
-    height: 300px;
-    border-radius: 300px  400px 100px ;
-    
-}
-.home-banner img{
-    position: relative;
-    margin-left: 143px;
-    width: 300px;
-
-}
 
 .text-style{
     color: #7300e6;
+    
+}
+
+@media screen and (max-width:767px) {
+.banner-container{
+    display: flex;
+    flex-direction: column;
+}
+.productContainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
     
 }

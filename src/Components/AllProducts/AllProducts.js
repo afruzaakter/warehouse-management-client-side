@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const AllProducts = ({ allProducts }) => {
     const navigate = useNavigate()
     const handleStockUpdate = () =>{
-            navigate('/products')
+            navigate('/inventoryItems')
     }
     const { name, img, price, description, quantity, supplierName } = allProducts;
     return (

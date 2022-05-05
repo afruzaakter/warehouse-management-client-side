@@ -108,18 +108,20 @@ const Blogs = () => {
                 <Accordion.Item eventKey="2">
                     <Accordion.Header> <h6>Question-2:When should we use Node.js & when should we use mongoDB</h6> </Accordion.Header>
                     <Accordion.Body>
-                        When should we use Nodejs?
+                        <h4 className='text-success'>When should we use Nodejs?</h4>
                         Nodejs is such a tool for the Javascript programming language.
                         So, if you want to write some kind of stand-alone program or server in Javascript, then you can use node.js for it.
-                        When should we use MongoDB?
+                        
+                        <h4 className='text-success'>When should we use MongoDB?</h4>
                         If your application needs the ability to persistently store data in a way that you can efficiently query or update it later, then you would typically use some form of database. There are dozens of popular databases. MongoDB is one such database.
 
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="3">
-                    <Accordion.Header> <h6>Question-2:Differences between sql and nosql databases.</h6> </Accordion.Header>
+                    <Accordion.Header> <h6>Question-2:What is the purpose of jwt and how does it work?</h6> </Accordion.Header>
                     <Accordion.Body>
-                        Answer bosbe
+                        <h6>JWT</h6>
+                        JSON Web Token.JWT can be used as an access token to prevent unwanted access to a protected resource.
 
                     </Accordion.Body>
                 </Accordion.Item>

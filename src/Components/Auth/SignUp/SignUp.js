@@ -89,15 +89,15 @@ const handleSignUp = (e) =>{
 }
 //firebase error handle
 useEffect(()=>{
-const error = hookError;
-if(error){
-    switch(error?.code){
+
+if(hookError){
+    switch(hookError?.code){
         case "auth/invalid-email":
         toast("Invalid email provided,Please provide a valid email")
         break;
 
         case"auth/invalid-password":
-        toast("Wrong password,Please provide a valid password")
+        toast("Wrong password,Please provide a valid password");
         break;
         default:
             toast('Something went wrong, Please try again')
