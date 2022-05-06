@@ -17,6 +17,10 @@
     border-radius: 54px;
 }
 
+.addinputField{
+    border: 1px solid #7300e6;
+    border-radius: 10px;
+}
 /* -------------social part -------------- */
 .line-container{
     display: flex;
@@ -35,8 +39,7 @@
 .social-style{
     background-color: #7300e6;
     border: none;
-    border-radius: 25px;
-    
+    border-radius: 10px;   
     
 }
 

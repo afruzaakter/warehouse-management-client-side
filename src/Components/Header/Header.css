@@ -1,5 +1,5 @@
 .header{
-   font-size: 20px;
+   font-size: 18px;
    transition: color ease-in-out 300ms;
    text-decoration: none;
    margin-left: 20px;
@@ -27,6 +27,6 @@
     color: wheat;
     border-radius: 10px 0;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
