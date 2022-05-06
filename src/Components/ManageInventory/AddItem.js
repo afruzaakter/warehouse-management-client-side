@@ -1,19 +1,36 @@
+import axios from 'axios';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
 const AddItem = () => {
-    const handleSubmitItem = (e) =>{
+    const handleSubmitItem = async (e) =>{
         e.preventDefault();
-        const addItem = {
+        const product = {
             name: e.target.name.value,
             price: e.target.price.value,
             image: e.target.image.value,
             suppler: e.target.suppler.value,
             quantity: e.target.quantity.value,
             description: e.target.description.value,
-        }
-        console.log(addItem);
-    }
+        };
+        console.log( product);
+       const data = await axios.post("http://localhost:5000/products", product);
+       console.log(data);
+
+    //send data to server
+    // fetch('http://localhost:5000/products',{
+    //     method: 'POST',
+    //     headers: {
+    //         'content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(product)
+    // })
+    // .then(res=>res.json())
+    // .then(data=>{
+    //     console.log('success',data);
+    // })
+
+    };
     return (
         <div className='container m-5 p-5 text-center'>
             <h1 > Add <span className='text-style '>item </span> </h1>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,Link} from 'react-router-dom';
 
 const AllProducts = ({ allProducts }) => {
     const navigate = useNavigate()
-    const handleStockUpdate = () =>{
-            navigate('/inventoryItems')
+    const handleStockUpdate = (id) =>{
+            navigate(`/inventoryItems/${id}`)
     }
-    const { name, img, price, description, quantity, supplierName } = allProducts;
+    const {_id, name, img, price, description, quantity, supplierName } = allProducts;
     return (
         <div>
             <div className=' card p-3 h-100 products'>
@@ -16,7 +16,9 @@ const AllProducts = ({ allProducts }) => {
                 <p>quantity: {quantity}</p>
                 <p>supplier: {supplierName}</p>
                 <p>{description}</p>
-                <button onClick={handleStockUpdate} className='social-style btn btn-success '>Stock Update</button>
+                <button onClick={() => handleStockUpdate(_id)} className='social-style btn btn-success '>Stock Update</button>
+
+            
             </div>
 
         </div>

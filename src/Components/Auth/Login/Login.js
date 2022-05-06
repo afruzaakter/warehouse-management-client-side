@@ -30,6 +30,8 @@ const Login = () => {
 
     if (user) {
         navigate('/home');
+
+        // navigate(from, { replace: true });
     }
     //Email handle Part
     const handleEmailChange = (e) => {
