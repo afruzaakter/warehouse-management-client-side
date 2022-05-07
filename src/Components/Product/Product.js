@@ -1,20 +1,19 @@
 import React from 'react';
 
-const Product = ({product}) => {
-    const {name,img,price,description}  = product;
+const Product = ({manageData}) => {
+    const {name,img,price,description}  = manageData;
     
     return (
-        <div className=' '>
-          <div>
-          <img src={img} alt="" />
+        <div className='container '>
+          <div className='card container'>
+          <img className='w-50' src={img} alt="" />
             <h4>{name}</h4>
             <h5>Price: ${price} </h5>
             <p>{description}</p>
+            <button className='btn btn-success me-3 mb-4'>Edit</button>
           </div>
         
-         <button className='btn btn-success me-3'>Edit</button>
-          <button className='btn btn-danger'>Delete
-          </button>
+       
         
         </div>
    

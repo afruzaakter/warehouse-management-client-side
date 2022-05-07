@@ -31,7 +31,7 @@ const Header = () => {
                             <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} to="/Home">HOME</NavLink>
 
 
-                            <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} as={Link} to="/inventoryItems">INVENTORY</NavLink>
+                            {/* <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} as={Link} to="/inventoryItems">INVENTORY</NavLink> */}
 
                             {
                                 user && <>

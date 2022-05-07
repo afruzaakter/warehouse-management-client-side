@@ -14,7 +14,7 @@ const AddItem = () => {
             description: e.target.description.value,
         };
         console.log( product);
-       const data = await axios.post("http://localhost:5000/products", product);
+       const data = await axios.post("http://localhost:5000/service", product);
        console.log(data);
 
     //send data to server

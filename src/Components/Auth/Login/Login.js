@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './Login.css';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import SocialIcon from '../SocialIcon/SocialIcon';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast, ToastContainer } from 'react-toastify';
+import Loading from '../../Loading/Loading';
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
     });
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
     // error handle
     const [error, setError] = useState({
         email: "",
@@ -22,16 +25,19 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
+        loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
 
     //Navigate part
     const navigate = useNavigate();
 
-    if (user) {
-        navigate('/home');
+   
 
-        // navigate(from, { replace: true });
+    if (user) {
+        // navigate('/home');
+        navigate(from, { replace: true });
+
     }
     //Email handle Part
     const handleEmailChange = (e) => {
@@ -72,7 +78,13 @@ const Login = () => {
 
     //firebase error handle
     useEffect(() => {
+
         const error = hookError;
+
+        //  loading part
+    if(loading){
+        return <Loading></Loading>
+    }
         if (error) {
             switch (error?.code) {
                 case "auth/invalid-email":

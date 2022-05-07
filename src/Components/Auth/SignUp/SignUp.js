@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../Loading/Loading';
 
 
 
@@ -30,7 +31,7 @@ const SignUp = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        
+        loading,
         hookError,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
       //navigate part
@@ -38,6 +39,8 @@ const SignUp = () => {
       if(user){
           navigate('/home');
       }
+
+    
 //handle email validation
 const handleEmailChange = (e) =>{
     // console.log({...userInfo, email: e.target.value});
@@ -89,6 +92,9 @@ const handleSignUp = (e) =>{
 }
 //firebase error handle
 useEffect(()=>{
+    if(loading){
+        return <Loading></Loading>
+    }
 
 if(hookError){
     switch(hookError?.code){

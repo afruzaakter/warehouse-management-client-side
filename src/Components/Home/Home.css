@@ -3,14 +3,24 @@
     background-color: aquamarine;
 }
 .banner-container{
-    background-image: url(../../images/slider/banner-image.jpg);
+    background-image: url(../../images/banner.png);
     height: 600px;
     width: 100%;
+    object-fit: cover;
 }
 
 .text-style{
     color: #7300e6;
     
+}
+.banner-style{
+    margin-top: 133px;
+    width: 287px;
+}
+
+.inventory-container{
+    border: 1px solid #7300e6;
+    border-radius: 15px;
 }
 
 @media screen and (max-width:767px) {
@@ -18,9 +28,10 @@
     display: flex;
     flex-direction: column;
 }
-.productContainer{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+
+.inventory-container{
+    display: flex;
+    flex-direction: column;
 }
     
 }

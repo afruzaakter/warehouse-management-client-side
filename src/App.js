@@ -12,10 +12,11 @@ import NotFound from './Components/NotFound/NotFound';
 import Blogs from './Components/Blogs/Blogs';
 import RequireAuth from './Components/Auth/RequireAuth/RequireAuth';
 import InventoryItems from './Components/InventoryItems/InventoryItems';
-import ManageItems from './Components/ManageInventory/ManageItems';
+
 import Footer from './Components/Footer/Footer';
 import AddItem from './Components/ManageInventory/AddItem';
 import MyItems from './Components/MyItems/MyItems';
+import ManageItems from './Components/ManageItems/ManageItems';
 function App() {
   return (
     <div>
@@ -43,9 +44,8 @@ function App() {
 
 
         <Route path='/manageitems' element={
-          
-            <ManageItems></ManageItems>
-        
+ 
+          <ManageItems></ManageItems>
         }
         ></Route>
 
