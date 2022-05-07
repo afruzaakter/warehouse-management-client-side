@@ -6,7 +6,7 @@ import slider3 from '../../images/slider/order_3.png'
 
 const Order = () => {
     return (
-        <div className='container'>
+        <div className='container mb-5'>
             <h1 className='text-center mb-5'>How to Order <span className='text-style'>From Dress Up?</span> </h1>
             <Carousel>
                 <Carousel.Item>

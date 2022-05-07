@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { Form } from 'react-bootstrap';
-
+import { toast, ToastContainer } from 'react-toastify';
 const AddItem = () => {
     const handleSubmitItem = async (e) =>{
         e.preventDefault();
@@ -13,10 +13,22 @@ const AddItem = () => {
             quantity: e.target.quantity.value,
             description: e.target.description.value,
         };
-        console.log( product);
-       const data = await axios.post("http://localhost:5000/service", product);
-       console.log(data);
+        // console.log( product);
 
+        try{
+            const {data} = await axios.post("http://localhost:5000/service", product);
+            //    console.log(data);
+        
+            if(!data.success){
+                return toast.error(data.error) 
+            }
+            toast.success(data.message);
+        }
+        catch(error){
+           console.log(error);
+        }
+    
+        
     //send data to server
     // fetch('http://localhost:5000/products',{
     //     method: 'POST',
@@ -38,7 +50,7 @@ const AddItem = () => {
             <Form onSubmit={handleSubmitItem} className='w-50 login-form p-5 mx-auto'>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     
-                    <Form.Control className='addinputField' type="text" name="name" placeholder="Name" />
+                    <Form.Control className='addinputField' type="text" name="name" placeholder=" Product Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                    
@@ -64,7 +76,7 @@ const AddItem = () => {
                 <button className='btn btn-success w-100 social-style'>Add Item</button>
             </Form>
 
-
+         <ToastContainer/>
 
         </div>
     );
