@@ -7,7 +7,7 @@ import './Home.css';
 import blazer from '../../images/Blazer.png'
 import Reviews from '../Reviews/Reviews';
 const Home = () => {
-    const [producted, setProducted] = useProducts();
+    const [producted] = useProducts();
     return (
         <div className=' '>
             <div className=' banner-container'>

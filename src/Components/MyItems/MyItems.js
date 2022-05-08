@@ -1,12 +1,15 @@
 // import { async } from '@firebase/util';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useParams } from 'react-router-dom';
+// import useProducts from '../../hooks/useProducts';
 
 
 const MyItems = () => {
+   
     const [items, setItems] = useState([]);
+    // const [producted, setProducted] = useProducts();
+
 //    const navigate = useNavigate();
 
     //update my item part
@@ -28,7 +31,7 @@ const MyItems = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    const remaining = items.filter(service => service._id)
+                    const remaining = items.filter(service => service._id !== id)
                     setItems(remaining);
                 })
 
@@ -42,7 +45,6 @@ const MyItems = () => {
         (async () => {
             const { data } = await axios.get('http://localhost:5000/service?limit=5');
             // console.log(data);
-
             // if(!data?.success) return toast.error(data.error);
             setItems(data)
 

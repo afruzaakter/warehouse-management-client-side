@@ -5,14 +5,20 @@ import './InventoryItems.css';
 
 const InventoryItems = () => {
   const [products, setProducts] = useState([]);
-
   // console.log(products);
   const { id } = useParams();
-
+ 
+  //Handle stock product
+  const handleAddStock = (e) => {
+       e.preventDefault();
+       const stockQuantity = e.name.target.value;
+       console.log(stockQuantity);
+  }
+  //Handle Delivered part
   const handleDeliver = e =>{
-    // e.preventDefault();
+    e.preventDefault();
     const quantity = products.quantity;
-    // console.log(quantity);
+    console.log(quantity);
     const newQuantity = parseInt(quantity-1);
     const items = {newQuantity};
 
@@ -65,9 +71,9 @@ const InventoryItems = () => {
         <form className='w-50 mx-auto' >
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
 
-            <Form.Control className='addinputField' type="text" name="name" placeholder="Name" />
+            <Form.Control className='addinputField' type="text" name="name" placeholder="Add Stock" />
           </Form.Group>
-          <button className='btn btn-success social-style '>Add Stock</button>
+          <button onClick={() => handleAddStock(products._id)} className='btn btn-success social-style '>Add Stock</button>
         </form>
       </div>
     </div>

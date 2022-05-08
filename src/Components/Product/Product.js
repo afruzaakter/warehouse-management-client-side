@@ -17,7 +17,7 @@ const Product = ({manageData}) => {
             <h5>Quantity: {quantity} Pis </h5>
             <p>supplier Name: {suppler} </p>
             <p>{description}</p>
-            <button onClick={() => handleStockUpdate(_id)} className='btn btn-success me-3 mb-4'>Edit</button>
+            <button onClick={() => handleStockUpdate(_id)} className='btn btn-success me-3 mb-4'>Stock Update</button>
           </div>
         
        
