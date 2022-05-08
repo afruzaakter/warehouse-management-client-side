@@ -76,26 +76,26 @@ const Update = () => {
 }
   return (
     <div className='m-5 p-5'>
-      <h1 className='text-center text-style' >Update Product</h1>
-      <Form onSubmit={handleUpdate} className="mx-auto w-50 login-form p-3">
+      <h1 className='text-center ' >Update <span className='text-style'>Product</span> </h1>
+      <Form onSubmit={handleUpdate} className="mx-auto w-50 login-form  p-4">
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Control type="text" name="name" placeholder="Product Name"  />
+          <Form.Control className='addinputField' type="text" name="name" placeholder="Product Name"  />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Control type="text" name="price" placeholder="Price" />
+          <Form.Control className='addinputField' type="text" name="price" placeholder="Price" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Control type="text" name="quantity" placeholder="Quantity"  />
+          <Form.Control className='addinputField' type="text" name="quantity" placeholder="Quantity"  />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Control type="text" name="suppler" placeholder="Supplier Name"  />
+          <Form.Control className='addinputField' type="text" name="suppler" placeholder="Supplier Name"  />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Control type="text" name="image" placeholder="Photo Url"  />
+          <Form.Control className='addinputField' type="text" name="image" placeholder="Photo Url"  />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 
-          <Form.Control as="textarea" name="description" placeholder='Product Description' rows={3} />
+          <Form.Control className='addinputField' as="textarea" name="description" placeholder='Product Description' rows={3} />
         </Form.Group>
         <button className='btn btn-success w-25 social-style'>Update</button>
         <Link to="/myitems"> <button className='btn btn-success w-25 ms-3'>Back</button> </Link>

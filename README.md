@@ -9,11 +9,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 .Firebase hook install, email , password and Google authentication setup.\
 .Home page Design , others component create, bootstrap install, fontawasome install etc.\
 .Server side: Server side folder create and install mongodb, express, cors and dotenv file.\
-
+Use Frameworks:\
+.React-Bootstrap \
+.React\
+.React-Router-Dom\
+.React-firebase hook\
+.react-toastify etc\
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Project Live Link.\
+Open [https://assignment-11-brazzers.web.app/](https://assignment-11-brazzers.web.app/) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

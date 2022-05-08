@@ -8,6 +8,13 @@ const InventoryItems = () => {
   // console.log(products);
   const { id } = useParams();
 
+  const handleDeliver = e =>{
+    e.preventDefault();
+
+  }
+
+
+//product add
   useEffect(() => {
     const url = `http://localhost:5000/service/${id}`
     // console.log(url);
