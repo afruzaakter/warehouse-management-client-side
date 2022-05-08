@@ -14,7 +14,7 @@ Use Frameworks:\
 .React\
 .React-Router-Dom\
 .React-firebase hook\
-.react-toastify etc\
+.react-toastify etc
 ### `npm start`
 
 Project Live Link.\

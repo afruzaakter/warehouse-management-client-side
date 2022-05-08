@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({manageData}) => {
-    const {name,image,price,description,quantity,suppler}  = manageData;
-    
+   
+    const {_id,name,image,price,description,quantity,suppler}  = manageData;
+    const navigate = useNavigate()
+    const handleStockUpdate = (id) =>{
+            navigate(`/inventoryItems/${id}`)
+    }
     return (
         <div className='container '>
           <div className='card container h-100'>
@@ -12,7 +17,7 @@ const Product = ({manageData}) => {
             <h5>Quantity: {quantity} Pis </h5>
             <p>supplier Name: {suppler} </p>
             <p>{description}</p>
-            <button className='btn btn-success me-3 mb-4'>Edit</button>
+            <button onClick={() => handleStockUpdate(_id)} className='btn btn-success me-3 mb-4'>Edit</button>
           </div>
         
        

@@ -11,7 +11,7 @@ const ProductDetails = ({product}) => {
             <p>{description}</p>
           </div>
         
-         <button className='btn btn-success me-3'>Edit</button>
+         <button className='btn btn-success me-3'>Update</button>
           <button className='btn btn-danger'>Delete
           </button>
         </div>
