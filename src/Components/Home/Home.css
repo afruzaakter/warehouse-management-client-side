@@ -23,6 +23,13 @@
     border-radius: 15px;
 }
 
+.review-style{
+    margin-left: 200px;
+}
+.review-style-img{
+    width: 100px;
+}
+
 @media screen and (max-width:767px) {
 .banner-container{
     display: flex;

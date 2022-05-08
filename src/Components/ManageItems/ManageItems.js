@@ -3,7 +3,7 @@ import useProducts from '../../hooks/useProducts';
 import Product from '../Product/Product';
 import './ManageItems.css'
 const ManageItems = () => {
-    const [producted, setProducted] = useProducts();
+    const [producted] = useProducts();
     // console.log(producted);
     return (
         <div className=''>

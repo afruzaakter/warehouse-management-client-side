@@ -1,6 +1,6 @@
 
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import './Header.css'
 import logo from '../../images/logobd.jpg';
 import auth from '../../firebase.init';
@@ -9,6 +9,7 @@ import { signOut } from 'firebase/auth';
 
 
 const Header = () => {
+    const {id} = useParams()
     const [user] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
@@ -30,14 +31,15 @@ const Header = () => {
                         <Nav className='header'>
                             <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} to="/Home">HOME</NavLink>
 
-
-                            {/* <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} as={Link} to="/inventoryItems">INVENTORY</NavLink> */}
+                            <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} as={Link} to="/manageitems">MANAGE ITEM</NavLink>
+                           
 
                             {
                                 user && <>
-                                    <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} as={Link} to="/manageitems">MANAGE ITEM</NavLink>
+                                    <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} as={Link} to={`/inventoryItems/${id}`}>INVENTORY</NavLink>
                                 </>
                             }
+                           
                             {
                                 user && <>
                                 <NavLink className={({ isActive }) => (isActive ? "active-link" : "header")} as = {Link} to = "/additem">ADD ITEM</NavLink>

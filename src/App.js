@@ -17,6 +17,8 @@ import Footer from './Components/Footer/Footer';
 import AddItem from './Components/ManageInventory/AddItem';
 import MyItems from './Components/MyItems/MyItems';
 import ManageItems from './Components/ManageItems/ManageItems';
+import Update from './Components/Update/Update';
+// import Reviews from './Components/Reviews/Reviews';
 function App() {
   return (
     <div>
@@ -26,6 +28,7 @@ function App() {
         <Route path='/home' element={<Home></Home>} ></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        {/* <Route path='/reviews' element={ <Reviews></Reviews> }></Route> */}
 
         {/* <Route path='/inventoryItems' element={
           <RequireAuth>
@@ -52,6 +55,12 @@ function App() {
         <Route path='/additem' element={
           <RequireAuth>
             <AddItem></AddItem>
+          </RequireAuth>
+        }
+        ></Route>
+        <Route path='/update/:id' element={
+          <RequireAuth>
+            <Update></Update>
           </RequireAuth>
         }
         ></Route>

@@ -5,13 +5,18 @@ import AllProducts from '../AllProducts/AllProducts'
 import Order from '../Order/Order';
 import './Home.css';
 import blazer from '../../images/Blazer.png'
+import Reviews from '../Reviews/Reviews';
 const Home = () => {
     const [producted, setProducted] = useProducts();
     return (
         <div className=' '>
             <div className=' banner-container'>
                 <div className='d-flex justify-content-around align-items-center '>
-                    <h1>Bangla desh </h1>
+                   <div>
+                   <p className='fs-3 fw-3'>50% off in all products</p>
+                    <h1 className=''>Man <span className='text-style'>Fashion</span> </h1>
+                    <button className='btn btn-success social-style p-2'>Shop Now</button>
+                   </div>
                     <img className='  banner-style ms-3' src={blazer} alt="" />
                 </div>
 
@@ -27,6 +32,7 @@ const Home = () => {
             </div>
 
             <Order></Order>
+            <Reviews></Reviews>
         </div>
     );
 };

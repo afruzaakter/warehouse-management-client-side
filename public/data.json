@@ -4,8 +4,8 @@
     "name": "Sports Coat",
     "price": 59,
     "quantity": 50,
-    "supplierName": "Milton",
-    "img": "https://i.ibb.co/1GFmKmC/61-Yt-CBTqm-HL-AC-UL320.jpg",
+    "suppler": "Milton",
+    "image": "https://i.ibb.co/1GFmKmC/61-Yt-CBTqm-HL-AC-UL320.jpg",
     "description": " MOGU Men's Casual Suit Blazer Jackets Slim Fit Plaid Sports Coat"
   },
   {
@@ -13,8 +13,8 @@
     "name": "Sports Coat",
     "price": 59,
     "quantity": 50,
-    "supplierName": "Milton",
-    "img": "https://i.ibb.co/1GFmKmC/61-Yt-CBTqm-HL-AC-UL320.jpg",
+    "suppler": "Milton",
+    "image": "https://i.ibb.co/1GFmKmC/61-Yt-CBTqm-HL-AC-UL320.jpg",
     "description": " MOGU Men's Casual Suit Blazer Jackets Slim Fit Plaid Sports Coat"
   },
   {
@@ -22,8 +22,8 @@
     "name": "Motion Blazer",
     "price": 89,
     "quantity": 100,
-    "supplierName": "Milton khan",
-    "img": "https://i.ibb.co/vwNXRd7/blezer2.jpg",
+    "suppler": "Milton khan",
+    "image": "https://i.ibb.co/vwNXRd7/blezer2.jpg",
     "description": "Haggar Clothing Men's Tailored Fit In Motion Blazer"
   },
   {
@@ -31,8 +31,8 @@
     "name": "Sports Coats",
     "price": 70,
     "quantity": 50,
-    "supplierName": "Jessy",
-    "img": "https://i.ibb.co/44jHqDc/blezer3.jpg",
+    "suppler": "Jessy",
+    "image": "https://i.ibb.co/44jHqDc/blezer3.jpg",
     "description": "COOFANDY Men's Casual Sports Coats Dress Blazer Stylish Lightweight Suit Jackets"
   },
   {
@@ -40,8 +40,8 @@
     "name": "Woven Sportcoat",
     "price": 90,
     "quantity": 50,
-    "supplierName": "Robert son",
-    "img": "https://i.ibb.co/db2756Q/blezer4.jpg",
+    "suppler": "Robert son",
+    "image": "https://i.ibb.co/db2756Q/blezer4.jpg",
     "description": " Robert Graham Men's Trinity Woven Sportcoat"
   },
   {
@@ -49,8 +49,8 @@
     "name": "Lightweight Suit Jackets",
     "price": 95,
     "quantity": 30,
-    "supplierName": "Milton roy",
-    "img": "https://i.ibb.co/9hGryrY/blezer5.jpg",
+    "suppler": "Milton roy",
+    "image": "https://i.ibb.co/9hGryrY/blezer5.jpg",
     "description": "COOFANDY Men's Casual Sports Coats Dress Blazer Stylish Lightweight Suit Jackets"
   },
   {
@@ -58,8 +58,8 @@
     "name": "Sports Coat",
     "price": 59,
     "quantity": 50,
-    "supplierName": "Milton",
-    "img": "https://i.ibb.co/1GFmKmC/61-Yt-CBTqm-HL-AC-UL320.jpg",
+    "suppler": "Milton",
+    "image": "https://i.ibb.co/1GFmKmC/61-Yt-CBTqm-HL-AC-UL320.jpg",
     "description": " MOGU Men's Casual Suit Blazer Jackets Slim Fit Plaid Sports Coat"
   },
   {
@@ -67,8 +67,8 @@
     "name": "Motion Blazer",
     "price": 89,
     "quantity": 100,
-    "supplierName": "Milton khan",
-    "img": "https://i.ibb.co/vwNXRd7/blezer2.jpg",
+    "suppler": "Milton khan",
+    "image": "https://i.ibb.co/vwNXRd7/blezer2.jpg",
     "description": "Haggar Clothing Men's Tailored Fit In Motion Blazer"
   }
 ]
