@@ -100,12 +100,12 @@ const Login = () => {
         }
     }, [hookError])
     return (
-        <div className='container m-5 p-5'>
-            <div className='m-5 p-5'>
-                <div className='p-3  w-50 mx-auto login-form'>
+        <div className='container mt-5 pt-5'>
+            <div className='mt-5 pt-2'>
+                <div className='p-3   mx-auto login-form'>
                     <div>
                         <h3 className='text-center textColor'>LOGIN</h3>
-                        <Form onSubmit={handleLogin}>
+                        <Form className=''  onSubmit={handleLogin}>
                             <Form.Group className="mb-3 " controlId="formBasicEmail">
                                 <Form.Control className='inputField' onChange={handleEmailChange} type="email" placeholder="Your Email" />
                             </Form.Group>

@@ -27,7 +27,7 @@ const Reviews = () => {
                     <div>
                         <Carousel.Caption>
                         <div className='w-50 review-style w-50'>
-                        <h3>Alden Smith</h3>
+                        <h3 >Alden Smith</h3>
                         <p >Sed ut perspiciatis unde omnis iste natus error sit voluptatem amet laudantium, quaeillo inventore sed veritatis et quasi architecto beatae vitae dicta sunt explicabo eiusmod tempor incididunt ut labore.</p>
                         </div>
                     </Carousel.Caption>

@@ -16,7 +16,7 @@ const Update = () => {
   // console.log(item);
 
   useEffect(() => {
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://shrouded-castle-17734.herokuapp.com/service/${id}`;
     // console.log(url);
     fetch(url)
       .then(res => res.json())
@@ -47,7 +47,7 @@ const Update = () => {
     const product = { name, price, image, suppler, quantity, description };
 
     console.log(product);
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://shrouded-castle-17734.herokuapp.com/service/${id}`;
     // console.log(url);
 
     fetch(url, {

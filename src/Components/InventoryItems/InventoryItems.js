@@ -9,34 +9,35 @@ const InventoryItems = () => {
   const { id } = useParams();
  
   //Handle stock product
-  const handleAddStock = (e) => {
-       e.preventDefault();
-       const stockQuantity = e.name.target.value;
-       console.log(stockQuantity);
-  }
+  // const handleAddStock = (e) => {
+  //      e.preventDefault();
+  //      const stockQuantity = e.name.target.value;
+  //      console.log(stockQuantity);
+  // }
   //Handle Delivered part
   const handleDeliver = e =>{
-    e.preventDefault();
+   
     const quantity = products.quantity;
-    console.log(quantity);
+    // console.log(quantity);
     const newQuantity = parseInt(quantity-1);
     const items = {newQuantity};
+  
+    // console.log(items);
 
-    console.log(items);
-
-    const url = `http://localhost:5000/service/${id}`
+    const url = `https://shrouded-castle-17734.herokuapp.com/service/${id}`
     fetch(url,{
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(items)
+      body: JSON.stringify({items})
     })
     .then (res=>res.json())
     .then(data =>{
       console.log('success', data);
       alert('users Add successfully');
       e.target.reset();
+      
     })
 
   }
@@ -44,7 +45,7 @@ const InventoryItems = () => {
 
 //product add
   useEffect(() => {
-    const url = `http://localhost:5000/service/${id}`
+    const url = `https://shrouded-castle-17734.herokuapp.com/service/${id}`
     // console.log(url);
     fetch(url)
       .then(res => res.json())
@@ -73,7 +74,7 @@ const InventoryItems = () => {
 
             <Form.Control className='addinputField' type="text" name="name" placeholder="Add Stock" />
           </Form.Group>
-          <button onClick={() => handleAddStock(products._id)} className='btn btn-success social-style '>Add Stock</button>
+          <button className='btn btn-success social-style '>Add Stock</button>
         </form>
       </div>
     </div>
@@ -81,3 +82,5 @@ const InventoryItems = () => {
 };
 
 export default InventoryItems;
+
+// onClick={() => handleAddStock(products._id)} 

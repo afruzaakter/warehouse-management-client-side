@@ -112,8 +112,8 @@ if(hookError){
 },[hookError])
 
     return (
-        <div className='container m-5 p-5'>
-            <div className='m-5 p-5'>
+        <div className='container mt-5 pt-5'>
+            <div className='mt-5 pt-5'>
                 <div className='p-3  w-50 mx-auto login-form'>
                     <div>
                         <h3 className='text-center'>SIGN UP</h3>

@@ -6,23 +6,23 @@ import { Link, useParams } from 'react-router-dom';
 
 
 const MyItems = () => {
-   
+
     const [items, setItems] = useState([]);
     // const [producted, setProducted] = useProducts();
 
-//    const navigate = useNavigate();
+    //    const navigate = useNavigate();
 
     //update my item part
-// const handleUpdate = (id) => {
-//     navigate('./update');
-// }
-    
+    // const handleUpdate = (id) => {
+    //     navigate('./update');
+    // }
+
 
     //delete my item part
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
-          const url = `http://localhost:5000/service/${id}`
+            const url = `https://shrouded-castle-17734.herokuapp.com/service/${id}`
             console.log(url);
 
             fetch(url, {
@@ -43,7 +43,7 @@ const MyItems = () => {
     useEffect(() => {
 
         (async () => {
-            const { data } = await axios.get('http://localhost:5000/service?limit=5');
+            const { data } = await axios.get('https://shrouded-castle-17734.herokuapp.com/service?limit=5');
             // console.log(data);
             // if(!data?.success) return toast.error(data.error);
             setItems(data)
@@ -56,8 +56,8 @@ const MyItems = () => {
         <div className='container m-5 p-5'>
             <h1 className='text-center'> My Items</h1>
 
-            <table className="table">
-                <thead>
+            <table className="table ">
+                <thead className='tableContainer'>
                     <tr>
 
                         <th scope="col">Product Name</th>
@@ -69,7 +69,7 @@ const MyItems = () => {
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='tableContainer'>
                     {
                         items.map(item => {
                             <div key={item._id}></div>
@@ -82,9 +82,9 @@ const MyItems = () => {
                                     <td> <img className='w-25' src={item.image} alt="" /> </td>
                                     <td>{item.description}</td>
                                     <td className='d-flex'>
-                                      
+
                                         <Link to={`/update/${item._id}`}>
-                                        <button className='btn btn-success me-2' >Update</button>
+                                            <button className='btn btn-success me-2' >Update</button>
                                         </Link>
 
                                         <button onClick={() => handleDelete(item._id)} className='btn btn-danger' >Delete</button>
